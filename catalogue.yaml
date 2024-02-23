@@ -57,12 +57,12 @@
   - name: get the categories count
     ansible.builtin.command:  mongo --host mongodb.awsaiops.online --quiet --eval 'db,getSiblingDB("catalogue"); db.products.count()'
     register: product_count
-    
+
   - name: get the categories count
     ansible.builtin.debug:
       msg: "product count: {{product_count}}"
 
   - name: load catalogue data
-    ansible.builtin.command: mongo --host mongodb.awsaiops.online </schema/catalogue.js
+    ansible.builtin.command: mongo --host mongodb.awsaiops.online </app/schema/catalogue.js
 
 
