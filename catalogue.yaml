@@ -41,7 +41,7 @@
         chdir: /app
 
   - name: copy catalogue service
-    ansibe.builtin.copy:
+    ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
 
@@ -50,7 +50,7 @@
       daemon_reload: true
       
   - name: copy mongodb repo
-    ansibe.builtin.copy:
+    ansible.builtin.copy:
       src: mongodb.repo
       dest: /etc/yum.repos.d/mongodb.repo
 
