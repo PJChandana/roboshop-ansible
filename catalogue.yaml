@@ -14,17 +14,17 @@
     ansible.builtin.user:
       name: roboshop
 
-  - name: Create directory
+  - name: create app directory
     ansible.builtin.file:
       path: /app
       state: directory
 
-  - name: Download catalogue aplication
+  - name: download catalogue application
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
       dest: /tmp
     
-  - name: Extract catalogue application
+  - name: extract catalogue application
     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
       dest: /app
@@ -35,7 +35,7 @@
     args:
         chdir: /app
 
-  - name: copy catalogue service
+  - name: Copy catalogue service
     ansibe.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
@@ -49,7 +49,7 @@
       src: mongodb.repo
       dest: /etc/yum.repos.d/mongodb.repo
 
-  - name: Install mongodb
+  - name: Install mongodb client
     ansible.builtin.package:
       name: mongodb-org-shell
       state: present
