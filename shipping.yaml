@@ -49,11 +49,11 @@
       src: shipping.service
       dest: /etc/systemd/system/shipping.service
 
-   - name: daemon reload and start
-      ansible.builtin.systemd_service:
+  - name: daemon reload and start
+    ansible.builtin.systemd_service:
       daemon_reload: true
       
-  - name: install mysql client
+  - name: install mysql clientS
     ansible.builtin.dnf: 
       name:  maven 
       state: present
