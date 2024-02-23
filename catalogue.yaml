@@ -44,7 +44,7 @@
     ansible.builtin.systemd_service:
       daemon_reload: true
       
-  name: Copy mongodb repo
+  - name: Copy mongodb repo
     ansibe.builtin.copy:
       src: mongodb.repo
       dest: /etc/yum.repos.d/mongodb.repo
